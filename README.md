@@ -1119,7 +1119,8 @@ curl https://YOUR_DOMAIN.fakturownia.pl/account.json \
             "api_token": "API_TOKEN",
             "account": {
                 "prefix": "prefix1",
-		"lang": "pl"
+		"lang": "pl",
+		"logo_url": "https://s3-eu-west-1.amazonaws.com/fs.siteor.com/radgost/files/f-images/fakturownia_logo.png"
             },
             "user": {
                 "login": "login1",
@@ -1163,6 +1164,19 @@ Inne pola dostępne przy tworzeniu nowego konta (pomocne przy integracji)
 		"integration_fast_login": true - umożliwia automatyczne logowanie Twoich użytkowników w Fakturowni
 		"integration_logout_url": "http://twojastrona.pl/" - umożliwia powrót Twoich użytkowników na Twoją stronę po ich wylogowaniu się z Fakturowni
 	}
+```
+
+Edycja konta:
+```shell
+curl https://YOUR_DOMAIN.fakturownia.pl/account.json \
+    -X PUT \
+    -H 'Accept: application/json'  \
+    -H 'Content-Type: application/json' \
+    -d '{"api_token": "API_TOKEN",
+        "account": {
+            "logo_url": "https://s3-eu-west-1.amazonaws.com/fs.siteor.com/radgost/files/f-images/fakturownia_logo.png"
+        }
+    }'
 ```
 
 Pobranie informacji o koncie:
